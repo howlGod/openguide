@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    #content p {
+      text-indent: 2em;
+    }
+
+    #content {
+      padding: 20px;
+    }
+
+    #content h3 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html" class="main">首页</a>
+    <a href="kx.html">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="index.html">系部介绍</a>
+    <a href="index-zy.html">专业介绍</a>
+    <a href="index-sz.html">师资配置</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="index.html">首页</a>
+    >
+    <a href="index.html" style="color: cadetblue;">系部介绍</a>
+  </div>
+  <div id="content">
+    <h3>信息工程系简介</h3>
+    <p>
+      信息工程系现有软件技术、动漫制作技术、虚拟现实技术应用、人工智能技术应用4个招生专业。其中，软件技术专业是国家骨干专业、山东省特色专业、山东省专本贯通分段培养试点专业（对口本科专业：青岛大学数据科学与软件工程学院软件工程专业），牵头建设青岛市中高职软件服务外包专业办学联盟；动漫制作技术专业是青岛市现代学徒制试点专业，牵头建设青岛市中高职动漫设计与制作专业办学联盟；虚拟现实技术应用专业聘请俄罗斯工程科学院外籍院士、国家级重大人才工程入选者、梦幻世界科技集团董事长王立军作为专业领军人，并成立了虚拟现实应用技术工作室为企业开发虚拟现实应用项目；人工智能技术应用专业是2021年新增专业，主要为青岛人工智能应用与服务产业高地建设培养专业人才。
+    </p>
+    <p>
+      信息工程系现有在校生800余人，专任教师31人，其中教授2人，副教授9人，博士3人，硕士学位以上教师占比100%，双师素质教师占比95%以上。信息工程系现有省级教学团队1个、省级教学名师1人，建有省级名师工作室1个、省级精品课程7门、省级精品资源共享课程4门。
+    </p>
+    <p>信息工程系注重学生德育教育，多次获得山东及青岛高校工委的表彰；坚持以赛促学，近三年来，学生在各类大赛中获得国家一等奖5项，二等奖9项，省级一等奖19项；毕业生的就业率和就业质量一直保持较高水平。</p>
+    <h3>机构设置</h3>
+    <table border="1px" cellpadding="2px" cellspacing="0" style="width: 100%; text-align: center;">
+      <tr>
+        <th>名称</th>
+        <th>房间号</th>
+        <th>联系电话</th>
+      </tr>
+      <tr>
+        <td>党总支办公室</td>
+        <td>北校区1-213</td>
+        <td>0532-55761277</td>
+      </tr>
+      <tr>
+        <td>主任办公室</td>
+        <td>北校区1-404</td>
+        <td>0532-55761276</td>
+      </tr>
+      <tr>
+        <td>副主任、系秘办公室</td>
+        <td>北校区1-404</td>
+        <td>0532-55761276</td>
+      </tr>
+      <tr>
+        <td>辅导员办公室</td>
+        <td>北校区1-215</td>
+        <td>0532-55761083</td>
+      </tr>
+      <tr>
+        <td>教研室办公室</td>
+        <td>北校区1-404</td>
+        <td>0532-55761278</td>
+      </tr>
+    </table>
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>

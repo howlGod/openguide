@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html" class="main">首页</a>
+    <a href="kx.html">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="index.html">系部介绍</a>
+    <a href="index-zy.html">专业介绍</a>
+    <a href="index-sz.html">师资配置</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="index.html">首页</a>
+    >
+    <a href="index-zy.html">专业介绍</a>
+    >
+    <a href="rengongzhineng.html" style="color: cadetblue;">人工智能技术应用</a>
+  </div>
+  <div id="content">
+    <h3 style="text-align: center;">人工智能技术应用专业介绍</h3>
+    <img src="img/rengong1.jpg" alt="">
+    <h3>专业特色</h3>
+    <p>人工智能技术应用专业主要培养掌握人工智能基础专业理论知识，具备人工智能技术应用开发、系统管理与维护等能力，能够从事人工智能相关应用开发、数据处理与分析、系统运维、技术支持等工作的高素质技术技能人才。</p>
+    <p>
+      人工智能是第四次工业革命的核心驱动力量，正在帮助各行各业实现智能化升级，让我们走进智能时代。青岛作为我国北方著名的智慧之城、科技之都，信息产业发达，是中国人工智能产业发展潜力城市20强城市。青岛市“十四五”规划和2035年远景目标明确指出，要突破发展人工智能等核心引领性产业，建设人工智能应用与服务产业高地，急需大量人工智能技术相关专业的人才。
+    </p>
+    <p>与青岛海疆智远信息科技有限公司、青岛海图领信息技术有限公司开展现代学徒制试点工作，校企联合培养人才。</p>
+    <p>建有大数据实训室、机器人技术实训室，设有Python开发技术、Python数据分析等相关课程，组织学生参加山东省高校大学生人工智能大赛、山东省大学生智能控制大赛，与本科高校学生同台竞技，取得良好的成绩。</p>
+    <img src="img/rengong2.jpg" alt="">
+    <img src="img/rengong3.jpg" alt="">
+    <h3>核心课程与实习实训</h3>
+    <p>人工智能导论、Python 程序设计、深度学习、python数据分析、数据仓库与数据挖掘实践、数据可视化技术、人工智能算法应用与实践、人工智能项目开发等。</p>
+    <h3>就业面向</h3>
+    <p>人工智能技术应用相关的企业，从事人工智能应用产品开发与测试、数据处理、系统运维、产品营销、技术支持等相关岗位工作。</p>
+    <img src="img/rengong4.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>

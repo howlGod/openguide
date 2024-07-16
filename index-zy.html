@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    #content {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+    }
+
+    #content div {
+      background-color: rgb(47, 175, 239);
+      width: 50%;
+      margin-right: 2px;
+      text-align: center;
+    }
+
+    #content a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #liaojie {
+      margin-bottom: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html" class="main">首页</a>
+    <a href="kx.html">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="index.html">系部介绍</a>
+    <a href="index-zy.html">专业介绍</a>
+    <a href="index-sz.html">师资配置</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="index.html">首页</a>
+    >
+    <a href="index-zy.html" style="color: cadetblue;">专业介绍</a>
+  </div>
+  <div id="content">
+    <div class="block"><a href="ruanjianjishu.html">软件技术</a></div>
+    <div class="block"><a href="rengongzhineng.html">人工智能技术应用</a></div>
+    <div class="block"><a href="dongmanzhizuo.html">动漫制作技术</a></div>
+    <div class="block"><a href="xunijishu.html">虚拟现实技术应用</a></div>
+  </div>
+  <div style="text-align: center;" id="liaojie">
+    ↑点击了解详情
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>

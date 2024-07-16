@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html" class="main">首页</a>
+    <a href="kx.html">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="index.html">系部介绍</a>
+    <a href="index-zy.html">专业介绍</a>
+    <a href="index-sz.html">师资配置</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="index.html">首页</a>
+    >
+    <a href="index-zy.html">专业介绍</a>
+    >
+    <a href="xunijishu.html" style="color: cadetblue;">虚拟现实技术应用</a>
+  </div>
+  <div id="content">
+    <h3 style="text-align: center;">虚拟现实技术应用专业介绍</h3>
+    <p>——学院与慧科教育科技集团共建专业。</p>
+    <img src="img/xuni1.jpg" alt="">
+    <img src="img/xuni2.jpg" alt="">
+    <p>青岛虚拟现实（Virtual
+      Reality，缩写为VR）产业发展领跑全国，全国首个虚拟现实高新技术产业化基地落户崂山，挂牌运营虚拟现实/增强现实技术及应用国家级工程实验室，培育引进了北航青岛研究院等VR研发机构及企业80家，集聚了大量国内VR领域的高端科研机构和高层次人才，欲打造千亿产业群，急需要大量的虚拟现实开发人才。
+    </p>
+    <img src="img/xuni3.jpg" alt="">
+    <p>聘请俄罗斯工程院外籍院士、梦幻世界科技集团董事长、北京邮电大学和北京科技大学客座教授王立军博士担任专业群领军人，指导虚拟现实技术应用专业建设，提供最前沿技术支持，为学生提供实习、就业岗位。</p>
+    <img src="img/xuni4.jpg" alt="">
+    <img src="img/xuni5.jpg" alt="">
+    <p>
+      建有虚拟现实协同创新中心，提供虚拟现实项目开发服务，学生在工作室进行三维建模与动画制作、全景拍摄和虚拟现实交互开发等，完成江苏盱眙县畜禽废弃物再生处理厂VR漫游及动画展示、封龙战记大型手游项目场景建模、北京环保局注入式土壤改善设备VR原理展示等项目。
+    </p>
+    <img src="img/xuni6.jpg" alt="">
+    <img src="img/xuni8.jpg" alt="">
+    <p>虚拟现实技术应用专业毕业生将就业到虚拟现实、增强现实设计或应用类企业，从事虚拟现实产品设计、手机游戏开发、虚拟引擎开发、全景漫游设计等岗位。</p>
+    <img src="img/xuni7.jpg" alt="">
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>

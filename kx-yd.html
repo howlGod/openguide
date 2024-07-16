@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="kx.html" class="main">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="kx.html">开学报到</a>
+    <a href="kx-jz.html">居住</a>
+    <a href="kx-gf.html">饮食</a>
+    <a href="kx-yd.html">运动</a>
+    <a href="kx-cx.html">出行</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="kx.html">开学指南</a>
+    >
+    <a href="kx.html" style="color: cadetblue;">运动</a>
+  </div>
+  <div id="content">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>

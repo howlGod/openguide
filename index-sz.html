@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    .personal {
+      text-indent: 2em;
+      border: 2px solid rgb(15, 117, 168);
+      padding: 1px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <head><a href="index.html"><img src="img/logo.png"></a></head>
+  <nav>
+    <a href="index.html" class="main">首页</a>
+    <a href="kx.html">开学指南</a>
+  </nav>
+  <div class="secondNav">
+    <a href="index.html">系部介绍</a>
+    <a href="index-zy.html">专业介绍</a>
+    <a href="index-sz.html">师资配置</a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="img/ruanjian.jpg" alt=""></div>
+      <div class="slide"><img src="img/rengongzhineng.jpg" alt=""></div>
+      <div class="slide"><img src="img/xuni.jpg" alt=""></div>
+      <div class="slide"><img src="img/dongman.jpg" alt=""></div>
+    </div>
+  </div>
+  <div id="tit">
+    <a href="index.html">首页</a>
+    >
+    <a href="index-sz.html" style="color: cadetblue;">师资配置</a>
+  </div>
+  <div id="content">
+    <div class="personal">
+      <h3>教学名师 柳淑花</h3>
+      <div class="personal-item">
+        <img src="img/shengjijiaoshou.jpg" style="width: 100px;">
+      </div>
+      <div class="personal-item">
+        <p>
+          （一）个人简介柳淑花，1965年2月生，汉族，山东高密人，教授。山东省第十届、十一届政协委员，青岛市市南区第十五届人大代表，青岛市李沧区第四届、五届、六届政协委员。（二）从事专业软件技术（三）主要教授课程1．数据库原理与应用（SQL
+          Server）；2．Visual C#程序设计；3．ASP.NET动态网页制作；4．Excel高级操作。（四）本人教学成果1. 2012年度省级基金项目《山东省高校人文社会科学研究计划“高职学生移动学习实证研究...
+        </p>
+        <a href="liushuhua.html" title="教学名师 柳淑花">详情→</a>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="personal">
+      <h3>教学名师 张玲</h3>
+      <div class="personal-item">
+        <img src="img/院级名师1.png" style="width: 100px;">
+      </div>
+      <div class="personal-item">
+        <p>
+          （一）个人简介张玲，山东青岛人，汉族，副教授。2001年毕业于山东师范大学信息工程系，获学士学位，2004年毕业于中国海洋大学工程学院，获得硕士学位，2004年6月到我院任教，曾任软件技术专业带头人，青岛市中高职专业办学联盟项目负责人，山东省优质校建设信息技术与软件外包专业群联系人等。（二）从事专业软件技术专业，主攻应用软件研发与教学（三）主要教授课程C语言程序设计，数据结构，JAVA语言程序设计，ASP.NET开发技...
+        </p>
+        <a href="zhangling.html" title="教学名师 张玲">详情→</a>
+      </div>
+
+
+    </div>
+    <div class="personal">
+      <h3>青年技能名师 莫新平</h3>
+      <div class="personal-item"><img src="img/院级名师2.png" style="width: 100px;"></div>
+      <div class="personal-item">
+        <p>
+          （一）个人简介莫新平（1979-），山东夏津人，硕士，副教授，信息工程系副主任。（二）研究领域计算机教学、办公自动、多媒体设计与制作、教育信...
+        </p>
+        <a href="moxinping.html" title="青年技能名师 莫新平">详情→</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bottom">
+    <p>山东外贸职业学院</p>
+    <p>联系电话：0532-55761083 0532-55761152</p>
+    <p>北校区：青岛市巨峰路201号 南校区：青岛市江西路62号 </p>
+  </div>
+
+</body>
+<script>
+  //专业轮播图
+  document.addEventListener('DOMContentLoaded', function () {
+    let slideTrack = document.querySelector('.slide-track');
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function moveSlider() {
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    }, 3000);
+    document.addEventListener('swipeleft', function () {
+      index = (index + 1) % slides.length;
+      moveSlider();
+    });
+
+    document.addEventListener('swiperight', function () {
+      index = (index - 1 + slides.length) % slides.length;
+      moveSlider();
+    });
+  });
+</script>
+
+</html>
